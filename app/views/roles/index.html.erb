@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Roles</h1>
+
+<%= form_tag(roles_path, method: 'get', class: "role-form") do %>
+<div class="form-group">
+  <%= label_tag 'Name :' %>
+  
+  <%= text_field_tag(:name, params[:name].present? ? params[:name].present? : "" ) %>
+</div>
+<div class="form-group-submit">
+  <%= submit_tag("Search") %>
+</div>
+<% end %>
+
+<table class="table" align ="center" >
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th align="center">Actions</th>
+      <th colspan = "1 "></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @roles.each do |role| %>
+      <tr>
+        <td><%= role.name %></td>
+        <td><%= role.description %></td>
+        <td><%= link_to 'Show', role_path(role) , class: 'btn btn-info' %></td>
+        <td><%= link_to 'Edit', edit_role_path(role), class: 'btn btn-default' %></td>
+        <td><%= link_to 'Destroy', role_path(role), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Role', new_role_path %>

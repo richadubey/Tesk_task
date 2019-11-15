@@ -1,0 +1,80 @@
+<div class="card-block">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3"> 
+      <%= form_for(@user, :url => users_create_path, remote: true) do |f| %>
+      <div class="form-group row">
+        <label for="fname" class="col-md-4 control-label">First Name</label>
+        <div class="col-md-8">
+          <%= f.text_field :first_name %>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="fname" class="col-md-4 control-label">Last Name</label>
+          <div class="col-md-8">
+            <%= f.text_field :last_name %>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="fname" class="col-md-4 control-label">Email ID</label>
+            <div class="col-md-8">
+              <%= f.text_field :email  %>
+              </div>
+          </div>
+          <div class="form-group row">
+            <label for="fname" class="col-md-4 control-label">Password</label>
+            <div class="col-md-8">
+              <%= f.text_field :password  %>
+              </div>
+          </div>
+          <div class="form-group row">
+            <label for="fname" class="col-md-4 control-label">Confirn Password</label>
+            <div class="col-md-8">
+              <%= f.text_field :password_confirmation  %>
+              </div>
+          </div>
+          <div class="form-group row">
+            <label for="fname" class="col-md-4 control-label">Mobile Number</label>
+            <div class="col-md-8">
+              <%= f.text_field :mobile %>
+              </div>
+            </div>
+          <div class="form-group row">
+            <label for="fname" class="col-md-4 control-label">Gender </label>
+            <div class="col-md-8">
+              <%= f.select :gender, ["Female","Male"], :prompt => "Select a Gender" %>
+              </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="fname" class="col-md-4 control-label">Date of Birth</label>
+            <div class="col-md-8">
+              <%= f.text_field :date_of_birth, id: 'datetimepicker1' %>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="fname" class="col-md-4 control-label">Role</label>
+            <div class="col-md-8">
+               <%= f.select :roles, Role.all.map{|s| [s.name,s.id]}, :prompt => "Select a Role" %>
+
+            </div>
+          </div>
+          
+           
+            
+            <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-8">
+                <%= f.submit :Submit, class: 'btn btn-success',id: 'submit', onclick: 'submitForm()' %>
+                </div>
+              </div>
+  <% end %>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+  $(function () {
+    $('#datetimepicker1').datetimepicker();
+  });
+</script>
+
+

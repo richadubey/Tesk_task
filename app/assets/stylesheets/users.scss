@@ -1,0 +1,19 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.custom-form-user {
+	max-width: 95%;
+	margin: 0 auto;
+}
+
+.custom-form-user .form-group {
+	width: 26%;
+	margin-right: 10px;
+	float: left;
+}
+
+.custom-form-user .form-group-submit {
+	width: 15%;
+	float: left;
+}

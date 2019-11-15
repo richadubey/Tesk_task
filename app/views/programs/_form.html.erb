@@ -1,0 +1,32 @@
+<div class="card-block">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= nested_form_for(@program) do |prog| %>
+        <div class="form-group row" >
+          <label for="fname" class="col-md-4 control-label">Name</label><div class="col-md-8">
+          <%= prog.text_field :name %>
+          </div>
+        </div>
+       <%= prog.fields_for :pdays do |pday| %>
+        <div class="form-group row" >
+          <label for="fname" class="col-md-4 control-label">Days</label><div  class="col-md-8">
+          <%= pday.text_field :days %>
+          
+          </div>
+        </div>
+          
+        <% end %>
+          <%= prog.link_to_add "Add days", :pdays %>
+          <%= prog.link_to_remove "Remove days"%>
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-8">
+            <%= prog.submit :Submit, class: 'btn btn-success' %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+

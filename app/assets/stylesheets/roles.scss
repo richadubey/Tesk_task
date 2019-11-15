@@ -1,0 +1,23 @@
+// Place all the styles related to the roles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+input.body {
+  width:10%;
+}
+.role-form {
+	max-width: 95%;
+	margin: 0 auto;
+}
+
+.role-form .form-group {
+	width: 26%;
+	margin-right: 10px;
+	float: left;
+}
+
+.role-form .form-group-submit {
+	width: 15%;
+	float: left;
+}

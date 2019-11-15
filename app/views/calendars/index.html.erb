@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+
+
+
+
+<table class="table" align ="center" >
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th align="center">Actions</th>
+      <th colspan = "1 "></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @calendars.each do |calendar| %>
+      <tr>
+        <td><%= calendar.name %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

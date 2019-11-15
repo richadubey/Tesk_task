@@ -1,0 +1,55 @@
+
+<p id="notice"><%= notice %></p>
+
+<h1>User</h1>
+<%= form_tag(users_path, method: 'get', class: "custom-form-user")  do %>
+  <div class="form-group">
+    <%= label_tag 'First Name :' %>
+    <%= text_field_tag(:first_name, params[:first_name].present? ? params[:first_name] : "" ) %>
+  </div>
+  <div class="form-group">
+    <%= label_tag 'Last Name :' %>
+    <%= text_field_tag(:last_name, params[:last_name].present? ? params[:last_name].present? : "") %>
+  </div>
+  <div class="form-group">
+    <%= label_tag 'Login_Id :' %>
+    <%= text_field_tag(:email, params[:email].present? ? params[:email].present? : "") %>
+  </div>
+  <div class="form-group-submit">
+    <%= submit_tag("Search") %>
+  </div>
+<% end %>
+
+<table class="table" align ="center" >
+  <thead>
+    <tr>
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>Date of Birth</th>
+      <th>Mobile</th>
+      <th>Email</th>
+      
+      <th align="center">Actions</th>
+      <th colspan = "1 "></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.first_name %></td>
+        <td><%= user.last_name %></td>
+        <td><%= user.date_of_birth %></td>
+        <td><%= user.mobile %></td>
+        <td><%= user.email %></td>
+        <td><%= link_to 'Show', student_path(user) , class: 'btn btn-info' %></td>
+        <td><%= link_to 'Edit', edit_student_path(user), class: 'btn btn-default' %></td>
+        <td><%= link_to 'Destroy', student_path(user), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Student', new_student_path %>
