@@ -4,7 +4,7 @@
     <div class="col-md-6 col-md-offset-3"> 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-group row">
-        <label for="fname" class="col-md-4 control-label">login</label>
+        <label for="fname" class="col-md-4 control-label">Email</label>
         <div class="col-md-8">
           <%= f.email_field :login, autofocus: true, autocomplete: "login" %>
           </div>

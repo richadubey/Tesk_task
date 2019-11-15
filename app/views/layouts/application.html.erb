@@ -11,7 +11,7 @@
   </head>
 
   <body>
-    <% if user_signed_in? and current_user.has_role? :admin -%>
+    <% if user_signed_in? and current_user.is_admin? -%>
         <nav class="navbar navbar-inverse">
          <div class="container-fluid">
           <div class="navbar-header">
@@ -27,7 +27,7 @@
       </nav> 
     Logged in as <strong><%= current_user.email %></strong></br>
     <%= link_to "Add Programs",new_program_path %>
-    <% elsif user_signed_in? and current_user.has_role? :user -%>
+    <% elsif user_signed_in? and !current_user.is_admin? -%>
         <nav class="navbar navbar-inverse">
          <div class="container-fluid">
           <div class="navbar-header">
@@ -46,9 +46,7 @@
     <% else %>
       <nav class="navbar navbar-inverse">
         <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#">Yuvasoft Solutions Pvt, Ltd</a>
-          </div>
+          
           <ul class="nav navbar-nav navbar-right">
             <li><a href = "<%= new_user_registration_path %>"> <span class="glyphicon glyphicon-user"></span>Sign up </a></li>
             <li><a href = "<%= new_user_session_path %>" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li>

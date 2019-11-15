@@ -16,16 +16,14 @@
 
 //= require jquery
 //= require bootstrap-sprockets
-//= require js/aos.js
 //= require js/jquery-3.3.1.min.js
 //= require js/jquery-migrate-3.0.1.min.js
 //= require js/jquery-ui.js
 //= require js/popper.min.js
 //= require js/bootstrap.min.js
-//= require js/owl.carousel.min.js
+
 //= require js/jquery.stellar.min.js
-//= require js/jquery.countdown.min.js
-//= require js/jquery.magnific-popup.min.js
+
 //= require js/bootstrap-datepicker.min.js
 
 

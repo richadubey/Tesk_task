@@ -63,7 +63,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   protected
 
   def sign_up_params
-    devise_parameter_sanitizer.sanitize(:sign_up)
+    params.require(:user).permit(:first_name,:email, :password, :password_confirmation,:mobile)
+
+    # devise_parameter_sanitizer.sanitize(:sign_up)
   end
 
   
